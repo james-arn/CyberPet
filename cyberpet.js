@@ -44,7 +44,7 @@ class Dog extends Animal {
     this._lovesBone = lovesBone;
   }
   get lovesBone() {
-    return this._lovesCarrot;
+    return this._lovesBone;
   }
 }
 
