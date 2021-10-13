@@ -15,6 +15,11 @@ const alertThirst = 75;
 const alertBored = 75;
 const alertSleepy = 75;
 
+//Special items
+const bone = 0
+const carrot = 0
+const catFood = 0
+
 // Animal classes
 class Animal {
   constructor(name) {
@@ -42,7 +47,7 @@ class Animal {
     return this.sleepy;
   }
 
-  // underneath here is functions
+  // underneath here is class functions
   eat() {
     this._hunger - 50;
     this._thirst + 15;
@@ -70,6 +75,7 @@ class Animal {
     this._bored + 10;
 
   }
+
 }
 
 class Bunny extends Animal {
@@ -80,6 +86,7 @@ class Bunny extends Animal {
   get lovesCarrot() {
     return this._lovesCarrot;
   }
+
 }
 
 class Cat extends Animal {
@@ -102,16 +109,41 @@ class Dog extends Animal {
   }
 }
 
-// creating animals
-const Rosie = new Bunny("Rosie", true);
-const Dave = new Dog("Dave", true);
-const Connie = new Cat("Connie", true);
+//RANDOM EVENT AT START OF DAY FUNCTION
+function randomEvent () {
+let randomProb = Math.floor(Math.random() * 10);
+if (randomProb == 1) {
+  bone += 1;
+  console.log(`${Animal._name} found a bone!`);
+} if else (randomProb == 2) {
+  carrot += 1;
+  console.log(`${Animal._name} found a carrot!`);
+} if else (randomProb == 3) {
+  catFood += 1;
+  console.log(`${Animal._name} found catfood!`);
+} if else (randomProb == 4) {
+  Animal._bored + 20;
+  console.log(`It's raining and ${Animal._name} can't play alone outside and so is really bored. Boredom increased.`)
+} if else (randomProb == 5) {
+  Animal._thirst + 20;
+  console.log(`That last meal was super salty! ${Animal._name} is more thirsty`);
+} if else (randomProb == 6) {
+  Animal._hunger + 20;
+  console.log(`${Animal._name} is being greedy today and wants more food. Hunger increased.`)
+} if else (randomProb == 7) {
+  Animal._sleepy + 20;
+  console.log(`${Animal._name} woke up on the wrong side of the bed this morning. Need for sleep increased.`)
+} if else (randomProb == 8) {
+  Animal._sleepy - 10;
+  Animal._hunger - 10;
+  Animal._thirst - 10;
+  Animal._bored - 10;
+  console.log(`What a beautiful day! ${Animal._name} is in a good mood and feeling a little less demanding.`)
+} else {
+  console.log("It's a new day."}
+}}
 
-console.log(Rosie);
-console.log(Dave);
-console.log(Connie);
-
-// IF STATEMENT
+// GAME OVER CONDITIONS
 if (Animal._hunger >= maxHunger) {
   return console.log(`${Animal.name} has gotten too hungry and ran away`);
 } else if (Animal._hunger >= alertHung) {
@@ -132,3 +164,13 @@ if (Animal._hunger >= maxHunger) {
 } else if (Animal._sleepy >= alertSleepy) {
   console.log(`Put ${Animal.name} to bed immediately!`);
 }
+
+//START GAME
+console.log("Welcome to the adoption home! Who would you like to adopt and what would you like to call them?")
+
+// options to name and pick animal class
+const Rosie = new Bunny("Rosie", true);
+
+console.log("Great choice! Now you must take care of your pet, if you don't, they'll run away".)
+
+random
