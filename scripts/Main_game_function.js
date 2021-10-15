@@ -80,9 +80,12 @@ class Animal {
     }
   }
 
+
+
+
 // Game loop function.
 const gameLoop = () => {
-console.log("It's a new day! ");
+console.log("It's a new day!");
 randomEvent.randomEventFn();
 gameOverConditions.gameOverFn();
 const loopQuestions = [
@@ -129,10 +132,18 @@ const startQuestions = [
         name: "animalName",
         message: "and what would you like to call your pet?", 
     },
-]
+];
+
+
+pet = new // call upon object function;
 
 inquirer.prompt(startQuestions).then((answers) => {
- pet = new answers.animalType(answers.animalName, true);
+ if (answers.animalType === "Bunny") {
+   pet = new Bunny (answers.Animalname, true)
+ } else if 
+ 
+  // pet = new answers["animalType"](["animalName"], true);
 });
 .then(() => gameLoop())
 .catch((err) => {console.log(err)}) 
+
