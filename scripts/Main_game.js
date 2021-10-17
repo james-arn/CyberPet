@@ -1,8 +1,6 @@
 //GLOBAL VARIABLES
 "use strict";
 const inquirer = require("inquirer");
-// const gameOverConditions = require("./game_over_conditions");
-// const randomEvent = require("./random_event");
 const err = "error";
 let pet = "";
 let gameOn = true;
@@ -158,7 +156,7 @@ const gameLoop = () => {
     return console.log("Game over");
   }
   console.log(
-    `${pet._name} stats: Hunger ${pet._hunger}, Thirst ${pet._thirst}, Boredom ${pet._bored}, Energy ${pet._sleepy}`
+    `${pet._name} stats: Hunger ${pet._hunger}/100, Thirst ${pet._thirst}/100, Boredom ${pet._bored}/100, Energy ${pet._sleepy}/100. Keep below 100.`
   );
   const loopQuestions = [
     {
